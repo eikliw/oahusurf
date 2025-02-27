@@ -16,42 +16,54 @@ const shopify = shopifyApi({
   hostScheme: 'https'
 });
 
-export async function getProducts() {
-  const client = new shopify.clients.Storefront({
-    domain,
-    storefrontAccessToken,
-  });
-
+// Direct API request function instead of using the client
+async function fetchStorefrontApi(query: string, variables = {}) {
   try {
-    const { body } = await client.query({
-      data: `{
-        products(first: 12) {
-          edges {
-            node {
-              id
-              title
-              handle
-              priceRange {
-                minVariantPrice {
-                  amount
-                  currencyCode
-                }
+    const response = await fetch(`https://${domain}/api/${LATEST_API_VERSION}/graphql.json`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Storefront-Access-Token': storefrontAccessToken,
+      },
+      body: JSON.stringify({ query, variables }),
+    });
+
+    return await response.json();
+  } catch (error) {
+    console.error('Error fetching from Storefront API:', error);
+    throw error;
+  }
+}
+
+export async function getProducts() {
+  try {
+    const { data } = await fetchStorefrontApi(`{
+      products(first: 12) {
+        edges {
+          node {
+            id
+            title
+            handle
+            priceRange {
+              minVariantPrice {
+                amount
+                currencyCode
               }
-              images(first: 1) {
-                edges {
-                  node {
-                    url
-                    altText
-                  }
+            }
+            images(first: 1) {
+              edges {
+                node {
+                  url
+                  altText
                 }
               }
             }
           }
         }
-      }`,
-    });
+      }
+    }`);
 
-    return body.data.products.edges.map(({ node }: any) => ({
+    return data.products.edges.map(({ node }: any) => ({
       id: node.id,
       title: node.title,
       handle: node.handle,
@@ -65,51 +77,44 @@ export async function getProducts() {
 }
 
 export async function getProductByHandle(handle: string) {
-  const client = new shopify.clients.Storefront({
-    domain,
-    storefrontAccessToken,
-  });
-
   try {
-    const { body } = await client.query({
-      data: `{
-        productByHandle(handle: "${handle}") {
-          id
-          title
-          handle
-          description
-          priceRange {
-            minVariantPrice {
-              amount
-              currencyCode
-            }
+    const { data } = await fetchStorefrontApi(`{
+      productByHandle(handle: "${handle}") {
+        id
+        title
+        handle
+        description
+        priceRange {
+          minVariantPrice {
+            amount
+            currencyCode
           }
-          images(first: 5) {
-            edges {
-              node {
-                url
-                altText
-              }
-            }
-          }
-          variants(first: 10) {
-            edges {
-              node {
-                id
-                title
-                price {
-                  amount
-                  currencyCode
-                }
-                availableForSale
-              }
+        }
+        images(first: 5) {
+          edges {
+            node {
+              url
+              altText
             }
           }
         }
-      }`,
-    });
+        variants(first: 10) {
+          edges {
+            node {
+              id
+              title
+              price {
+                amount
+                currencyCode
+              }
+              availableForSale
+            }
+          }
+        }
+      }
+    }`);
 
-    const product = body.data.productByHandle;
+    const product = data.productByHandle;
     return {
       id: product.id,
       title: product.title,
