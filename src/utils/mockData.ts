@@ -1,4 +1,4 @@
-interface Product {
+export interface Product {
   id: string;
   title: string;
   handle: string;
@@ -9,12 +9,12 @@ interface Product {
   variants?: ProductVariant[];
 }
 
-interface ProductImage {
+export interface ProductImage {
   url: string;
   altText: string;
 }
 
-interface ProductVariant {
+export interface ProductVariant {
   id: string;
   title: string;
   price: string;
