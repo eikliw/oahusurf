@@ -115,13 +115,13 @@ export default function MensTShirtsPage() {
   return (
     <main className="min-h-screen bg-white pt-24 pb-16 md:pt-28 lg:pt-32">
       {/* Category Header */}
-      <section className="relative bg-ocean-blue/10 py-8 lg:py-12 overflow-hidden">
+      <section className="relative bg-ocean-blue/10 min-h-[50vh] flex items-center justify-center py-8 lg:py-12 overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mx-auto text-center">
             <h1 className={`text-3xl md:text-4xl font-bold text-volcanic mb-2 ${rockSalt.className}`}>
               Men's T-Shirts
             </h1>
-            <p className="text-base text-volcanic/70 max-w-2xl">
+            <p className="text-base text-volcanic/70 max-w-2xl mx-auto">
               Discover our collection of comfortable, stylish Hawaiian-inspired t-shirts for men.
               Perfect for beach days, casual outings, or just lounging in island style.
             </p>

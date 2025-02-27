@@ -2,15 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 44, 62, 80;
-  --background-rgb: 255, 255, 255;
-}
+@layer base {
+  :root {
+    --font-mr-de-haviland: var(--font-mr-de-haviland);
+  }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
-  overflow-x: hidden;
+  body {
+    @apply bg-background text-text-primary;
+  }
+
+  /* Improved focus styles */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ocean ring-offset-2;
+  }
+
+  /* Skip to main content link */
+  .skip-to-content {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 bg-ocean text-white px-4 py-2 rounded-lg z-50;
+  }
 }
 
 @layer components {
@@ -19,19 +28,44 @@ body {
   }
   
   .content-overlay {
-    @apply relative z-10 bg-black/30;
+    @apply relative z-10 bg-black/40; /* Increased overlay opacity for better contrast */
   }
   
   .nav-link {
-    @apply text-white hover:text-sand transition-colors duration-200;
+    @apply text-text-primary hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2;
   }
   
   .btn-primary {
-    @apply bg-ocean-blue hover:bg-ocean-blue/90 text-white px-6 py-3 rounded-lg transition-colors duration-200;
+    @apply bg-ocean hover:bg-ocean/90 text-white px-6 py-3 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2;
   }
   
   .btn-secondary {
-    @apply bg-coral hover:bg-coral/90 text-white px-6 py-3 rounded-lg transition-colors duration-200;
+    @apply bg-transparent border-2 border-ocean text-ocean hover:bg-ocean/10 px-6 py-3 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2;
+  }
+
+  .btn-accent {
+    @apply bg-coral hover:bg-coral/90 text-white px-6 py-3 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-coral focus:ring-offset-2;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-2 border-white text-white hover:bg-white/10 px-6 py-3 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+  }
+
+  .nav-link-light {
+    @apply text-white hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+  }
+
+  /* Form elements */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg border border-text-secondary/20 focus:outline-none focus:ring-2 focus:ring-ocean;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-text-dark mb-1;
+  }
+
+  .form-error {
+    @apply text-red-600 text-sm mt-1;
   }
 }
 
@@ -51,4 +85,14 @@ body {
 
 .animate-shake {
   animation: shake 0.6s ease-in-out;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
