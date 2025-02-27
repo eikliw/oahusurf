@@ -3,10 +3,10 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Rock_Salt } from 'next/font/google';
+import { Mr_De_Haviland } from 'next/font/google';
 import { useState } from 'react';
 
-const rockSalt = Rock_Salt({ weight: '400', subsets: ['latin'] });
+const mrDeHaviland = Mr_De_Haviland({ weight: '400', subsets: ['latin'] });
 
 export default function Header() {
   const pathname = usePathname();
@@ -19,18 +19,11 @@ export default function Header() {
 
   return (
     <header className={`fixed w-full z-50 ${isHomePage && !mobileMenuOpen ? 'bg-transparent' : 'bg-white shadow-sm'}`}>
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <Image
-              src="/images/logo.png"
-              alt="Oahu Surf Co Logo"
-              width={50}
-              height={50}
-              className="w-12 h-12"
-            />
-            <span className={`${rockSalt.className} text-xl ${isHomePage && !mobileMenuOpen ? 'text-white' : 'text-volcanic'}`}>
+          <Link href="/" className="flex items-center">
+            <span className={`${mrDeHaviland.className} text-4xl md:text-5xl lg:text-6xl ${isHomePage && !mobileMenuOpen ? 'text-white' : 'text-volcanic'}`}>
               Oahu Surf Co
             </span>
           </Link>

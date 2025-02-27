@@ -3,9 +3,9 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Rock_Salt } from 'next/font/google';
+import { Mr_De_Haviland } from 'next/font/google';
 
-const rockSalt = Rock_Salt({ weight: '400', subsets: ['latin'] });
+const mrDeHaviland = Mr_De_Haviland({ weight: '400', subsets: ['latin'] });
 
 export default function Footer() {
   const pathname = usePathname();
@@ -32,15 +32,8 @@ export default function Footer() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
               {/* Logo and About */}
               <div className="lg:col-span-3 flex flex-col">
-                <div className="flex items-center space-x-2 mb-4">
-                  <Image
-                    src="/images/logo.png"
-                    alt="Oahu Surf Co Logo"
-                    width={50}
-                    height={50}
-                    className="w-12 h-12"
-                  />
-                  <span className={`${rockSalt.className} text-xl text-sand`}>
+                <div className="mb-4">
+                  <span className={`${mrDeHaviland.className} text-4xl md:text-5xl text-sand`}>
                     Oahu Surf Co
                   </span>
                 </div>
@@ -195,7 +188,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className={`${rockSalt.className} text-xl mb-4`}>Oahu Surf Co</h3>
+              <h3 className={`${mrDeHaviland.className} text-4xl md:text-5xl mb-4`}>Oahu Surf Co</h3>
               <p className="text-sm opacity-80">
                 Your premier destination for surf gear and accessories in Oahu.
               </p>
