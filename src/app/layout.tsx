@@ -11,6 +11,7 @@ export const metadata = {
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import PasswordModal from '@/components/PasswordModal';
 
 export default function RootLayout({
   children,
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${workSans.className} bg-white text-volcanic`}>
+        <PasswordModal />
         <Header />
         {children}
         <Footer />
