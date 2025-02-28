@@ -3,10 +3,11 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Ms_Madi } from 'next/font/google';
+import { Ms_Madi, Roboto } from 'next/font/google';
 import { useState, useEffect } from 'react';
 
 const msMadi = Ms_Madi({ weight: '400', subsets: ['latin'] });
+const roboto = Roboto({ weight: ['400'], subsets: ['latin'] });
 
 export default function Header() {
   const pathname = usePathname();
@@ -56,7 +57,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className={`hidden md:flex items-center space-x-8 ${roboto.className} text-base lg:text-lg`}>
             <Link
               href="/"
               className={`${textColor} hover:text-ocean transition-colors duration-300`}

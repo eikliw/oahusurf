@@ -1,11 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Ms_Madi } from 'next/font/google';
+import { Ms_Madi, Roboto } from 'next/font/google';
 import Link from 'next/link';
 import Image from 'next/image';
 
 const msMadi = Ms_Madi({ weight: '400', subsets: ['latin'] });
+const roboto = Roboto({ weight: ['400'], subsets: ['latin'] });
 
 export default function Home() {
   return (
@@ -50,7 +51,7 @@ export default function Home() {
                 Aloha Spirit<br/>
                 in Every Stitch
               </h1>
-              <p className="text-lg md:text-xl text-white mb-8 drop-shadow max-w-lg">
+              <p className={`text-lg md:text-xl text-white mb-8 drop-shadow max-w-lg ${roboto.className}`}>
                 Discover authentic Hawaiian-inspired apparel and accessories that bring the spirit of the islands to your everyday life.
               </p>
               <div className="flex flex-wrap gap-4">
