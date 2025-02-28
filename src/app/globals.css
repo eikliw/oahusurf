@@ -16,9 +16,17 @@
     @apply outline-none ring-2 ring-ocean ring-offset-2;
   }
 
-  /* Skip to main content link */
+  /* Skip to main content link - completely hidden until focused */
   .skip-to-content {
-    @apply sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 bg-ocean text-white px-4 py-2 rounded-lg z-50;
+    @apply absolute overflow-hidden h-[1px] w-[1px] p-0 -m-[1px] whitespace-nowrap border-0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+  }
+  
+  .skip-to-content:focus {
+    @apply fixed top-4 left-4 h-auto w-auto m-0 overflow-visible bg-ocean text-white px-4 py-2 rounded-lg z-[100] whitespace-normal;
+    clip: auto;
+    clip-path: none;
   }
 }
 

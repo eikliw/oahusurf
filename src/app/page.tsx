@@ -10,7 +10,7 @@ const mrDeHaviland = Mr_De_Haviland({ weight: '400', subsets: ['latin'] });
 export default function Home() {
   return (
     <>
-      {/* Skip to main content link */}
+      {/* Skip to main content link - only visible when focused */}
       <a href="#main-content" className="skip-to-content">
         Skip to main content
       </a>
@@ -41,23 +41,6 @@ export default function Home() {
                 label="English" 
               />
             </video>
-            {/* Video Controls */}
-            <button 
-              onClick={() => {
-                const video = document.getElementById('hero-video') as HTMLVideoElement;
-                if (video.paused) {
-                  video.play();
-                } else {
-                  video.pause();
-                }
-              }}
-              className="absolute top-4 right-4 z-20 bg-black/50 p-2 rounded-full text-white hover:bg-black/70 focus:ring-2 focus:ring-white"
-              aria-label="Toggle video playback"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
-              </svg>
-            </button>
             {/* Overlay for better text contrast */}
             <div className="absolute inset-0 bg-black/20"></div>
           </div>
@@ -166,8 +149,8 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-surface rounded-xl shadow-md p-8 text-center">
-                <div className="w-16 h-16 mx-auto bg-ocean/20 rounded-full flex items-center justify-center mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-ocean">
+                <div className="w-16 h-16 mx-auto bg-ocean/30 rounded-full flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-8 h-8 text-ocean-blue">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                   </svg>
                 </div>
@@ -178,8 +161,8 @@ export default function Home() {
               </div>
 
               <div className="bg-surface rounded-xl shadow-md p-8 text-center">
-                <div className="w-16 h-16 mx-auto bg-coral/20 rounded-full flex items-center justify-center mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-coral">
+                <div className="w-16 h-16 mx-auto bg-coral/40 rounded-full flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-8 h-8 text-volcanic">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 01-5.276 3.67m0 0a9 9 0 01-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25" />
                   </svg>
                 </div>
@@ -190,8 +173,8 @@ export default function Home() {
               </div>
 
               <div className="bg-surface rounded-xl shadow-md p-8 text-center">
-                <div className="w-16 h-16 mx-auto bg-sunrise/20 rounded-full flex items-center justify-center mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-sunrise">
+                <div className="w-16 h-16 mx-auto bg-sunrise/40 rounded-full flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-8 h-8 text-sage-dark">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
                   </svg>
                 </div>
@@ -269,16 +252,15 @@ export default function Home() {
         <section 
           className="py-16 md:py-32 relative overflow-hidden min-h-[600px] flex items-center"
           aria-label="Summer Collection"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')`,
+            backgroundAttachment: 'fixed',
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+          }}
         >
-          <div className="absolute inset-0 z-0">
-            <Image 
-              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
-              alt="Hawaii Beach Background"
-              fill
-              className="object-cover object-center brightness-90"
-            />
-            <div className="absolute inset-0 bg-black/45"></div>
-          </div>
+          <div className="absolute inset-0 z-0 bg-black/45"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-xl">
               <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-light mb-4 drop-shadow-lg ${mrDeHaviland.className}`}>
@@ -420,7 +402,7 @@ export default function Home() {
 
         {/* Newsletter section */}
         <section 
-          className="py-16 md:py-24 bg-coral/10"
+          className="py-16 md:py-24 bg-volcanic/20"
           aria-label="Newsletter Subscription"
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -428,7 +410,7 @@ export default function Home() {
               <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-dark mb-4 ${mrDeHaviland.className}`} id="newsletter-heading">
                 Join Our 'Ohana
               </h2>
-              <p className="text-lg text-text-secondary mb-8" id="newsletter-description">
+              <p className="text-lg text-text-dark mb-8" id="newsletter-description">
                 Subscribe to our newsletter for exclusive deals, new product announcements, and a touch of aloha in your inbox.
               </p>
               <form 

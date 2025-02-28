@@ -40,6 +40,10 @@ export default function Header() {
     ? 'text-white'
     : 'text-volcanic';
 
+  const mobileTextColor = isHomePage && !isScrolled
+    ? 'text-white'
+    : 'text-volcanic';
+
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${headerBackground}`}>
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -51,47 +55,46 @@ export default function Header() {
             </span>
           </Link>
 
-          {/* Right side: Navigation + Cart */}
-          <div className="flex items-center">
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8 text-right">
-              <Link
-                href="/"
-                className={`${textColor} hover:text-ocean transition-colors duration-300`}
-              >
-                Home
-              </Link>
-              <Link
-                href="/shop"
-                className={`${textColor} hover:text-ocean transition-colors duration-300`}
-              >
-                Shop
-              </Link>
-              <Link
-                href="/about"
-                className={`${textColor} hover:text-ocean transition-colors duration-300`}
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className={`${textColor} hover:text-ocean transition-colors duration-300`}
-              >
-                Contact
-              </Link>
-              
-              <button
-                className={`${textColor} hover:text-ocean transition-colors duration-300 ml-4`}
-                aria-label="Shopping cart"
-              >
-                Cart (0)
-              </button>
-            </div>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <Link
+              href="/"
+              className={`${textColor} hover:text-ocean transition-colors duration-300`}
+            >
+              Home
+            </Link>
+            <Link
+              href="/shop"
+              className={`${textColor} hover:text-ocean transition-colors duration-300`}
+            >
+              Shop
+            </Link>
+            <Link
+              href="/about"
+              className={`${textColor} hover:text-ocean transition-colors duration-300`}
+            >
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className={`${textColor} hover:text-ocean transition-colors duration-300`}
+            >
+              Contact
+            </Link>
+            
+            <button
+              className={`${textColor} hover:text-ocean transition-colors duration-300`}
+              aria-label="Shopping cart"
+            >
+              Cart (0)
+            </button>
+          </div>
 
-            {/* Mobile: Menu button */}
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
             <button
               onClick={toggleMobileMenu}
-              className={`md:hidden ${textColor} p-2 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2 rounded-lg`}
+              className={`${mobileTextColor} p-2 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2 rounded-lg transition-colors duration-300`}
               aria-expanded={mobileMenuOpen}
               aria-label="Toggle menu"
             >
@@ -102,38 +105,46 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pt-4 pb-4 bg-white text-right border-t border-gray-200">
-            <div className="flex flex-col space-y-4 items-end">
-              <Link
-                href="/"
-                className="text-volcanic hover:text-ocean transition-colors duration-200 block px-4 py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                href="/shop"
-                className="text-volcanic hover:text-ocean transition-colors duration-200 block px-4 py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Shop
-              </Link>
-              <Link
-                href="/about"
-                className="text-volcanic hover:text-ocean transition-colors duration-200 block px-4 py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="text-volcanic hover:text-ocean transition-colors duration-200 block px-4 py-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-sm shadow-lg border-t border-gray-100">
+            <div className="container mx-auto px-4 py-4">
+              <div className="flex flex-col space-y-3">
+                <Link
+                  href="/"
+                  className="text-volcanic hover:text-ocean transition-colors duration-200 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/shop"
+                  className="text-volcanic hover:text-ocean transition-colors duration-200 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Shop
+                </Link>
+                <Link
+                  href="/about"
+                  className="text-volcanic hover:text-ocean transition-colors duration-200 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-volcanic hover:text-ocean transition-colors duration-200 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+                <button
+                  className="text-volcanic hover:text-ocean transition-colors duration-200 py-2 text-left"
+                  aria-label="Shopping cart"
+                >
+                  Cart (0)
+                </button>
+              </div>
             </div>
           </div>
         )}

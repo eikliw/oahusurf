@@ -13,24 +13,13 @@ export default function Footer() {
 
   return (
     <footer 
-      className={`w-full ${isHomePage ? 'bg-sage text-text-dark' : 'bg-sage text-text-dark'}`}
+      className={`w-full ${isHomePage ? 'bg-ocean/5 text-text-dark' : 'bg-ocean/5 text-text-dark'}`}
       role="contentinfo"
       aria-label="Site footer"
     >
       {/* Home Page Special Footer */}
       {isHomePage ? (
         <div>
-          {/* Wave Divider */}
-          <div className="relative w-full h-16 overflow-hidden" aria-hidden="true">
-            <Image 
-              src="/images/wave-pattern.png" 
-              alt=""
-              width={1000}
-              height={100} 
-              className="absolute w-full object-cover opacity-20"
-            />
-          </div>
-
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
             {/* Top Section with Logo, Links and Newsletter */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
