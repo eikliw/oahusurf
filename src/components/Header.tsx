@@ -3,10 +3,10 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mr_De_Haviland } from 'next/font/google';
+import { Ms_Madi } from 'next/font/google';
 import { useState, useEffect } from 'react';
 
-const mrDeHaviland = Mr_De_Haviland({ weight: '400', subsets: ['latin'] });
+const msMadi = Ms_Madi({ weight: '400', subsets: ['latin'] });
 
 export default function Header() {
   const pathname = usePathname();
@@ -50,8 +50,8 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className={`${mrDeHaviland.className} text-4xl md:text-5xl lg:text-6xl ${textColor} transition-colors duration-300`}>
-              Oahu Surf Co
+            <span className={`${msMadi.className} text-4xl md:text-4xl lg:text-5xl ${textColor} transition-colors duration-300`}>
+              OahuSurfCo
             </span>
           </Link>
 

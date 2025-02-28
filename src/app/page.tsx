@@ -1,20 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mr_De_Haviland } from 'next/font/google';
+import { Ms_Madi } from 'next/font/google';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const mrDeHaviland = Mr_De_Haviland({ weight: '400', subsets: ['latin'] });
+const msMadi = Ms_Madi({ weight: '400', subsets: ['latin'] });
 
 export default function Home() {
   return (
     <>
-      {/* Skip to main content link - only visible when focused */}
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-volcanic focus:shadow-lg focus:rounded-md focus:m-4">
-        Skip to main content
-      </a>
-      
       <main id="main-content" className="min-h-screen bg-white">
         {/* Hero section with video background */}
         <section 
@@ -51,7 +46,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="max-w-xl"
             >
-              <h1 className={`text-6xl md:text-7xl lg:text-8xl font-normal text-white mb-8 drop-shadow-lg ${mrDeHaviland.className}`}>
+              <h1 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-white mb-8 drop-shadow-lg leading-[1.1] ${msMadi.className}`}>
                 Aloha Spirit<br/>
                 in Every Stitch
               </h1>
@@ -82,7 +77,7 @@ export default function Home() {
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-dark mb-4 ${mrDeHaviland.className}`}>
+              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-dark mb-4 ${msMadi.className}`}>
                 Shop by Category
               </h2>
               <p className="text-lg text-text-secondary max-w-2xl mx-auto">
@@ -136,7 +131,7 @@ export default function Home() {
           </div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
-              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-dark mb-4 ${mrDeHaviland.className}`}>
+              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-dark mb-4 ${msMadi.className}`}>
                 The Spirit of Aloha
               </h2>
               <p className="text-lg text-text-secondary max-w-2xl mx-auto">
@@ -191,7 +186,7 @@ export default function Home() {
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-dark mb-4 ${mrDeHaviland.className}`}>
+              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-dark mb-4 ${msMadi.className}`}>
                 Featured Collections
               </h2>
               <p className="text-lg text-text-secondary max-w-2xl mx-auto">
@@ -260,7 +255,7 @@ export default function Home() {
           <div className="absolute inset-0 z-0 bg-black/45"></div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-xl">
-              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-light mb-4 drop-shadow-lg ${mrDeHaviland.className}`}>
+              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-light mb-4 drop-shadow-lg ${msMadi.className}`}>
                 Summer Collection
               </h2>
               <p className="text-lg text-text-light mb-6 drop-shadow-lg">
@@ -282,7 +277,7 @@ export default function Home() {
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-dark mb-4 ${mrDeHaviland.className}`}>
+              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-dark mb-4 ${msMadi.className}`}>
                 Customer Favorites
               </h2>
               <p className="text-lg text-text-secondary max-w-2xl mx-auto">
@@ -333,7 +328,7 @@ export default function Home() {
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-dark mb-4 ${mrDeHaviland.className}`}>
+              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-dark mb-4 ${msMadi.className}`}>
                 #OahuSurfStyle
               </h2>
               <p className="text-lg text-text-secondary max-w-2xl mx-auto">
@@ -404,7 +399,7 @@ export default function Home() {
         >
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-dark mb-4 ${mrDeHaviland.className}`} id="newsletter-heading">
+              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-dark mb-4 ${msMadi.className}`} id="newsletter-heading">
                 Join Our 'Ohana
               </h2>
               <p className="text-lg text-text-dark mb-8" id="newsletter-description">
@@ -472,7 +467,7 @@ function CategoryCard({
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
           <div className="absolute bottom-0 left-0 p-6">
-            <h3 id={`category-${title.toLowerCase().replace(/\s+/g, '-')}`} className={`text-4xl md:text-5xl lg:text-6xl font-bold text-text-light mb-1 ${mrDeHaviland.className}`}>{title}</h3>
+            <h3 id={`category-${title.toLowerCase().replace(/\s+/g, '-')}`} className={`text-4xl md:text-5xl lg:text-6xl font-bold text-text-light mb-1 ${msMadi.className}`}>{title}</h3>
             <p className="text-text-light/90">{description}</p>
           </div>
         </div>

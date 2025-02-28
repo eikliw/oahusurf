@@ -3,9 +3,9 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mr_De_Haviland } from 'next/font/google';
+import { Ms_Madi } from 'next/font/google';
 
-const mrDeHaviland = Mr_De_Haviland({ weight: '400', subsets: ['latin'] });
+const msMadi = Ms_Madi({ weight: '400', subsets: ['latin'] });
 
 export default function Footer() {
   const pathname = usePathname();
@@ -26,8 +26,8 @@ export default function Footer() {
               {/* Logo and About */}
               <div className="lg:col-span-3 flex flex-col">
                 <div className="mb-4">
-                  <span className={`${mrDeHaviland.className} text-4xl md:text-5xl text-ocean`} role="heading" aria-level={2}>
-                    Oahu Surf Co
+                  <span className={`${msMadi.className} text-4xl md:text-5xl text-ocean`} role="heading" aria-level={2}>
+                    OahuSurfCo
                   </span>
                 </div>
                 <p className="text-sm text-text-dark mb-4">
@@ -256,7 +256,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h3 className={`${mrDeHaviland.className} text-4xl md:text-5xl mb-4 text-text-dark`}>Oahu Surf Co</h3>
+              <h3 className={`${msMadi.className} text-4xl md:text-5xl mb-4 text-text-dark`}>Oahu Surf Co</h3>
               <p className="text-sm text-text-secondary">
                 Your premier destination for surf gear and accessories in Oahu.
               </p>
