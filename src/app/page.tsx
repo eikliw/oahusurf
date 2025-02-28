@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <>
       {/* Skip to main content link - only visible when focused */}
-      <a href="#main-content" className="skip-to-content">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-volcanic focus:shadow-lg focus:rounded-md focus:m-4">
         Skip to main content
       </a>
       
@@ -61,9 +61,6 @@ export default function Home() {
               <div className="flex flex-wrap gap-4">
                 <Link href="/shop" className="btn-primary inline-block">
                   Shop Now
-                </Link>
-                <Link href="/about" className="btn-secondary inline-block">
-                  Our Story
                 </Link>
               </div>
             </motion.div>

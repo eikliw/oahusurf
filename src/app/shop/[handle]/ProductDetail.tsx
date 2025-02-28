@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Rock_Salt } from 'next/font/google';
+import { Mr_De_Haviland } from 'next/font/google';
 import Image from 'next/image';
 import { Product } from '@/utils/mockData';
 
-const rockSalt = Rock_Salt({ weight: '400', subsets: ['latin'] });
+const mrDeHaviland = Mr_De_Haviland({ weight: '400', subsets: ['latin'] });
 
 interface ProductDetailProps {
   product: Product | null;
@@ -97,7 +97,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mt-6 px-0 sm:mt-10 lg:mt-0"
           >
-            <h1 className={`text-2xl sm:text-3xl font-bold text-volcanic ${rockSalt.className}`}>
+            <h1 className={`text-2xl sm:text-3xl font-bold text-volcanic ${mrDeHaviland.className}`}>
               {product.title}
             </h1>
             <div className="mt-3 flex items-center">

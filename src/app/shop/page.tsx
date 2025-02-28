@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Rock_Salt } from 'next/font/google';
+import { Mr_De_Haviland } from 'next/font/google';
 import ProductCard from '@/components/ProductCard';
 import { getProducts } from '@/utils/mockData';
 
-const rockSalt = Rock_Salt({ weight: '400', subsets: ['latin'] });
+const mrDeHaviland = Mr_De_Haviland({ weight: '400', subsets: ['latin'] });
 
 interface Product {
   id: string;
@@ -103,7 +103,7 @@ export default function ShopPage() {
             transition={{ duration: 0.5 }}
             className="flex flex-col md:flex-row md:items-center md:justify-between"
           >
-            <h1 className={`text-3xl md:text-4xl font-bold text-volcanic ${rockSalt.className}`}>
+            <h1 className={`text-3xl md:text-4xl font-bold text-volcanic ${mrDeHaviland.className}`}>
               Surf Shop
             </h1>
             <p className="mt-2 md:mt-0 text-volcanic/70">Find the perfect gear for your island adventures</p>
