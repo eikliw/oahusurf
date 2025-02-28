@@ -46,7 +46,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="max-w-xl"
             >
-              <h1 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-white mb-8 drop-shadow-lg leading-[1.1] ${msMadi.className}`}>
+              <h1 className={`text-6xl md:text-6xl lg:text-7xl font-normal text-white mb-8 drop-shadow-lg leading-[1.1] ${msMadi.className}`}>
                 Aloha Spirit<br/>
                 in Every Stitch
               </h1>
@@ -213,7 +213,7 @@ export default function Home() {
               />
               <SubcategoryCard 
                 title="Art" 
-                imageUrl="https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8"
+                imageUrl="https://images.unsplash.com/photo-1513519245088-0e12902e5a38" 
                 link="/home-decor/art" 
               />
               <SubcategoryCard 
@@ -233,7 +233,7 @@ export default function Home() {
               />
               <SubcategoryCard 
                 title="Candles" 
-                imageUrl="https://images.unsplash.com/photo-1608181831718-c9ffd8683b2f"
+                imageUrl="https://images.unsplash.com/photo-1603006905003-be475563bc59" 
                 link="/home-decor/candles" 
               />
             </div>
@@ -323,71 +323,152 @@ export default function Home() {
 
         {/* Instagram Section */}
         <section 
-          className="py-16 md:py-24 bg-background"
+          className="min-h-[600px] relative overflow-hidden bg-[#F7F3EE] flex items-center justify-center py-16 md:py-24"
           aria-label="Instagram Feed"
         >
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-text-dark mb-4 ${msMadi.className}`}>
-                #OahuSurfStyle
-              </h2>
-              <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-                Tag us on Instagram for a chance to be featured
-              </p>
-            </div>
+          {/* Animated background grid */}
+          <div className="absolute inset-0 flex flex-col justify-center gap-1">
+            <AnimatedImageRow 
+              images={[
+                "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+                "https://images.unsplash.com/photo-1542332213-9b5a5a3fad35",
+                "https://images.unsplash.com/photo-1598135753163-6167c1a1ad65",
+                "https://images.unsplash.com/photo-1483168527879-c66136b56105",
+                "https://images.unsplash.com/photo-1546514355-7fdc90ccbd03",
+                "https://images.unsplash.com/photo-1559494007-9f5847c49d94",
+                "https://images.unsplash.com/photo-1505852679233-d9fd70aff56d",
+                "https://images.unsplash.com/photo-1586375300773-8384e3e4916f",
+                "https://images.unsplash.com/photo-1570741066052-817c6de995c8",
+                "https://images.unsplash.com/photo-1544644181-1484b3fdfc62",
+                "https://images.unsplash.com/photo-1551524164-687a55dd1126",
+                "https://images.unsplash.com/photo-1526491109672-74740652b963"
+              ]} 
+              direction="left"
+              speed={160}
+            />
+            <AnimatedImageRow 
+              images={[
+                "https://images.unsplash.com/photo-1505852679233-d9fd70aff56d",
+                "https://images.unsplash.com/photo-1566992179452-7d35b628bd49",
+                "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6",
+                "https://images.unsplash.com/photo-1504387432042-8aca549e4729",
+                "https://images.unsplash.com/photo-1533760881669-80db4d7b341c",
+                "https://images.unsplash.com/photo-1586375300773-8384e3e4916f",
+                "https://images.unsplash.com/photo-1545251142-f32339076e6d",
+                "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272",
+                "https://images.unsplash.com/photo-1596178065887-1198b6148b2b",
+                "https://images.unsplash.com/photo-1587926690541-037b23915ed3",
+                "https://images.unsplash.com/photo-1542259009477-d625272157b7",
+                "https://images.unsplash.com/photo-1583255448430-17c5eda08e5c"
+              ]} 
+              direction="right"
+              speed={140}
+            />
+            <AnimatedImageRow 
+              images={[
+                "https://images.unsplash.com/photo-1549064233-0dd82082e0ec",
+                "https://images.unsplash.com/photo-1515859005217-8a1f08870f59",
+                "https://images.unsplash.com/photo-1584555613497-9ecf9dd06f89",
+                "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6",
+                "https://images.unsplash.com/photo-1545251142-f32339076e6d",
+                "https://images.unsplash.com/photo-1506477331477-33d5d8b3dc85",
+                "https://images.unsplash.com/photo-1596178065887-1198b6148b2b",
+                "https://images.unsplash.com/photo-1533760881669-80db4d7b341c",
+                "https://images.unsplash.com/photo-1551524164-687a55dd1126",
+                "https://images.unsplash.com/photo-1526491109672-74740652b963",
+                "https://images.unsplash.com/photo-1542332213-9b5a5a3fad35",
+                "https://images.unsplash.com/photo-1598135753163-6167c1a1ad65"
+              ]} 
+              direction="left"
+              speed={180}
+            />
+            <AnimatedImageRow 
+              images={[
+                "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6",
+                "https://images.unsplash.com/photo-1545251142-f32339076e6d",
+                "https://images.unsplash.com/photo-1483168527879-c66136b56105",
+                "https://images.unsplash.com/photo-1546514355-7fdc90ccbd03",
+                "https://images.unsplash.com/photo-1559494007-9f5847c49d94",
+                "https://images.unsplash.com/photo-1505852679233-d9fd70aff56d",
+                "https://images.unsplash.com/photo-1586375300773-8384e3e4916f",
+                "https://images.unsplash.com/photo-1570741066052-817c6de995c8",
+                "https://images.unsplash.com/photo-1544644181-1484b3fdfc62",
+                "https://images.unsplash.com/photo-1551524164-687a55dd1126",
+                "https://images.unsplash.com/photo-1526491109672-74740652b963",
+                "https://images.unsplash.com/photo-1542332213-9b5a5a3fad35"
+              ]} 
+              direction="right"
+              speed={150}
+            />
+          </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
-              <InstagramPost 
-                imageUrl="/images/instagram-1.jpg"
-                fallbackUrl="https://images.unsplash.com/photo-1537742718206-8d8c32ebd3b2"
-                username="@surfergirl"
-                caption="Perfect day at North Shore #oahusurfstyle"
-              />
-              <InstagramPost 
-                imageUrl="/images/instagram-2.jpg"
-                fallbackUrl="https://images.unsplash.com/photo-1586352565917-9cf51ede237f"
-                username="@beachbum808"
-                caption="Couldn't resist this tee #oahusurfco"
-              />
-              <InstagramPost 
-                imageUrl="/images/instagram-3.jpg"
-                fallbackUrl="https://images.unsplash.com/photo-1547592180-cdbf0d8755d0"
-                username="@islandlife"
-                caption="Beach days are the best days #oahusurfstyle"
-              />
-              <InstagramPost 
-                imageUrl="/images/instagram-4.jpg"
-                fallbackUrl="https://images.unsplash.com/photo-1528150177508-7cc0c36cda5c"
-                username="@hawaiilover"
-                caption="Living the dream #oahusurfco #aloha"
-              />
-            </div>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            {/* Glassmorphism card */}
+            <div className="max-w-4xl mx-auto backdrop-blur-lg bg-white/30 rounded-3xl shadow-2xl p-8 md:p-12 border border-white/20">
+              <div className="flex flex-col h-full justify-between gap-8">
+                <div className="text-center">
+                  <h2 className={`text-5xl md:text-5xl lg:text-6xl font-normal text-text-dark mb-4 ${msMadi.className}`}>
+                    #OahuSurfStyle
+                  </h2>
+                  <p className="text-lg text-text-dark/90 max-w-2xl mx-auto">
+                    Tag us on Instagram for a chance to be featured
+                  </p>
+                </div>
 
-            <div className="text-center mt-8">
-              <a 
-                href="https://www.instagram.com/oahusurfco" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-volcanic hover:text-ocean-blue transition-colors"
-              >
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="24" 
-                  height="24" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  className="w-5 h-5 mr-2"
-                >
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-                Follow us on Instagram
-              </a>
+                <div className="text-center">
+                  <a 
+                    href="https://www.instagram.com/oahusurfco" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-volcanic hover:text-ocean-blue transition-colors bg-white/80 px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all"
+                  >
+                    <svg 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="24" 
+                      height="24" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      className="w-5 h-5 mr-2"
+                    >
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    Follow us on Instagram
+                  </a>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+                  <InstagramPost 
+                    imageUrl="/images/instagram-1.jpg"
+                    fallbackUrl="https://images.unsplash.com/photo-1537742718206-8d8c32ebd3b2"
+                    username="@surfergirl"
+                    caption="Perfect day at North Shore #oahusurfstyle"
+                  />
+                  <InstagramPost 
+                    imageUrl="/images/instagram-2.jpg"
+                    fallbackUrl="https://images.unsplash.com/photo-1586352565917-9cf51ede237f"
+                    username="@beachbum808"
+                    caption="Couldn't resist this tee #oahusurfco"
+                  />
+                  <InstagramPost 
+                    imageUrl="/images/instagram-3.jpg"
+                    fallbackUrl="https://images.unsplash.com/photo-1547592180-cdbf0d8755d0"
+                    username="@islandlife"
+                    caption="Beach days are the best days #oahusurfstyle"
+                  />
+                  <InstagramPost 
+                    imageUrl="/images/instagram-4.jpg"
+                    fallbackUrl="https://images.unsplash.com/photo-1528150177508-7cc0c36cda5c"
+                    username="@hawaiilover"
+                    caption="Living the dream #oahusurfco #aloha"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -581,5 +662,56 @@ function InstagramPost({
         </div>
       </div>
     </motion.div>
+  );
+}
+
+// Component for animated image rows
+function AnimatedImageRow({ 
+  images, 
+  direction = 'left',
+  speed = 80
+}: { 
+  images: string[];
+  direction?: 'left' | 'right';
+  speed?: number;
+}) {
+  return (
+    <div className="flex overflow-hidden">
+      <div 
+        className={`flex gap-4 ${direction === 'left' ? 'animate-scroll-left' : 'animate-scroll-right'}`}
+        style={{ '--scroll-speed': `${speed}s` } as React.CSSProperties}
+      >
+        {/* First set of images */}
+        {images.map((image, index) => (
+          <div 
+            key={`${index}-1`} 
+            className="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden shadow-lg"
+          >
+            <Image
+              src={image}
+              alt="Hawaiian lifestyle"
+              width={128}
+              height={128}
+              className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+        ))}
+        {/* Duplicate set for seamless loop */}
+        {images.map((image, index) => (
+          <div 
+            key={`${index}-2`} 
+            className="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden shadow-lg"
+          >
+            <Image
+              src={image}
+              alt="Hawaiian lifestyle"
+              width={128}
+              height={128}
+              className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }

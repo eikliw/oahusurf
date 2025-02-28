@@ -13,11 +13,10 @@ export default function Footer() {
 
   return (
     <footer 
-      className={`w-full ${isHomePage ? 'bg-ocean/5 text-text-dark' : 'bg-ocean/5 text-text-dark'}`}
+      className="w-full bg-ocean/5 text-text-dark"
       role="contentinfo"
       aria-label="Site footer"
     >
-      {/* Home Page Special Footer */}
       {isHomePage ? (
         <div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
@@ -67,159 +66,138 @@ export default function Footer() {
               </div>
 
               {/* Navigation Links */}
-              <div className="lg:col-span-6 grid grid-cols-2 sm:grid-cols-3 gap-8">
-                <nav aria-label="Shop links">
-                  <h4 className="font-semibold mb-4 text-ocean">Shop</h4>
-                  <ul className="space-y-2">
-                    <li>
-                      <Link 
-                        href="/shop" 
-                        className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
-                      >
-                        All Products
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/shop/surfboards" 
-                        className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
-                      >
-                        Surfboards
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/shop/accessories" 
-                        className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
-                      >
-                        Accessories
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/shop/beachwear" 
-                        className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
-                      >
-                        Beachwear
-                      </Link>
-                    </li>
-                  </ul>
-                </nav>
+              <div className="lg:col-span-9">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-16 lg:pl-8">
+                  <nav aria-label="Shop links">
+                    <h4 className="font-semibold mb-6 text-ocean">Shop</h4>
+                    <ul className="space-y-3">
+                      <li>
+                        <Link 
+                          href="/apparel" 
+                          className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
+                        >
+                          Hawaiian Apparel
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/accessories" 
+                          className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
+                        >
+                          Beach Accessories
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/home-decor" 
+                          className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
+                        >
+                          Home Decor
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/new-arrivals" 
+                          className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
+                        >
+                          New Arrivals
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/sale" 
+                          className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
+                        >
+                          Sale Items
+                        </Link>
+                      </li>
+                    </ul>
+                  </nav>
 
-                <nav aria-label="Company links">
-                  <h4 className="font-semibold mb-4 text-ocean">Company</h4>
-                  <ul className="space-y-2">
-                    <li>
-                      <Link 
-                        href="/about" 
-                        className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
-                      >
-                        About Us
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/contact" 
-                        className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
-                      >
-                        Contact
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/sustainability" 
-                        className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
-                      >
-                        Sustainability
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/careers" 
-                        className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
-                      >
-                        Careers
-                      </Link>
-                    </li>
-                  </ul>
-                </nav>
+                  <nav aria-label="Company links">
+                    <h4 className="font-semibold mb-6 text-ocean">Company</h4>
+                    <ul className="space-y-3">
+                      <li>
+                        <Link 
+                          href="/about" 
+                          className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
+                        >
+                          Our Story
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/sustainability" 
+                          className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
+                        >
+                          Sustainability
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/hawaiian-culture" 
+                          className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
+                        >
+                          Hawaiian Culture
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/blog" 
+                          className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
+                        >
+                          Blog
+                        </Link>
+                      </li>
+                    </ul>
+                  </nav>
 
-                <nav aria-label="Support links">
-                  <h4 className="font-semibold mb-4 text-ocean">Support</h4>
-                  <ul className="space-y-2">
-                    <li>
-                      <Link 
-                        href="/faq" 
-                        className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
-                      >
-                        FAQs
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/shipping" 
-                        className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
-                      >
-                        Shipping
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/returns" 
-                        className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
-                      >
-                        Returns
-                      </Link>
-                    </li>
-                    <li>
-                      <Link 
-                        href="/size-guide" 
-                        className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
-                      >
-                        Size Guide
-                      </Link>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-
-              {/* Newsletter */}
-              <div className="lg:col-span-3">
-                <h4 className="font-semibold mb-4 text-ocean" id="newsletter-signup">Stay Updated</h4>
-                <p className="text-sm text-text-dark mb-4">
-                  Subscribe to get special offers, free giveaways, and new product announcements.
-                </p>
-                <form 
-                  className="flex flex-col gap-2"
-                  role="form"
-                  aria-labelledby="newsletter-signup"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    // Add form submission logic here
-                  }}
-                >
-                  <div>
-                    <label htmlFor="footer-email" className="sr-only">Email address</label>
-                    <input
-                      id="footer-email"
-                      type="email"
-                      name="email"
-                      required
-                      placeholder="Your email address"
-                      className="w-full px-4 py-2 rounded-lg bg-white text-text-dark border border-text-secondary/20 focus:outline-none focus:ring-2 focus:ring-ocean"
-                      aria-required="true"
-                      aria-describedby="email-validation"
-                    />
-                    <div id="email-validation" className="text-sm text-red-600 mt-1" role="alert"></div>
-                  </div>
-                  <button 
-                    type="submit" 
-                    className="bg-ocean hover:bg-ocean/90 text-white font-medium px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
-                    aria-label="Subscribe to newsletter"
-                  >
-                    Subscribe
-                  </button>
-                </form>
+                  <nav aria-label="Support links">
+                    <h4 className="font-semibold mb-6 text-ocean">Support</h4>
+                    <ul className="space-y-3">
+                      <li>
+                        <Link 
+                          href="/contact" 
+                          className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
+                        >
+                          Contact Us
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/shipping" 
+                          className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
+                        >
+                          Shipping Info
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/returns" 
+                          className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
+                        >
+                          Returns & Exchanges
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/size-guide" 
+                          className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
+                        >
+                          Size Guide
+                        </Link>
+                      </li>
+                      <li>
+                        <Link 
+                          href="/faq" 
+                          className="text-sm text-text-dark hover:text-ocean transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-ocean focus:ring-offset-2"
+                        >
+                          FAQ
+                        </Link>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
               </div>
             </div>
 

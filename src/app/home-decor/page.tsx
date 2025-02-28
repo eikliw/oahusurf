@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const msMadi = Ms_Madi({ weight: '400', subsets: ['latin'] });
 
-export default function AccessoriesPage() {
+export default function HomeDecorPage() {
   return (
     <main className="min-h-screen bg-white pt-14 md:pt-[4.5rem] lg:pt-[4.75rem]">
       {/* Category Header */}
@@ -20,10 +20,10 @@ export default function AccessoriesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl">
             <h1 className={`text-5xl md:text-6xl lg:text-7xl font-normal text-volcanic mb-4 ${msMadi.className}`}>
-              Accessories
+              Home Decor
             </h1>
             <p className="text-lg text-volcanic/80 max-w-2xl">
-              Complete your Hawaiian look with our collection of stylish accessories. Each piece is designed to complement your beach lifestyle and bring a touch of aloha to your everyday outfits.
+              Transform your space into a tropical paradise with our collection of Hawaiian-inspired home decor. From vibrant wall art to cozy textiles, bring the aloha spirit into every room.
             </p>
           </div>
         </div>
@@ -37,7 +37,7 @@ export default function AccessoriesPage() {
               <Link href="/" className="text-volcanic/60 hover:text-volcanic">Home</Link>
             </li>
             <li className="text-volcanic/60">/</li>
-            <li className="text-volcanic">Accessories</li>
+            <li className="text-volcanic">Home Decor</li>
           </ol>
         </nav>
       </div>
@@ -45,47 +45,48 @@ export default function AccessoriesPage() {
       {/* Main Categories */}
       <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Hats & Beanies */}
+          {/* Wall Art */}
           <CategoryCard 
-            title="Hats & Beanies" 
-            description="Stylish headwear for sun protection and beach style" 
-            imageUrl="https://images.unsplash.com/photo-1521369909029-2afed882baee" 
-            link="/accessories/hats-beanies"
+            title="Wall Art" 
+            description="Beautiful prints and canvas art featuring Hawaiian scenes" 
+            imageUrl="https://images.unsplash.com/photo-1513519245088-0e12902e5a38" 
+            link="/home-decor/wall-art"
             subcategories={[
-              { name: "Bucket Hats", link: "/accessories/hats-beanies/bucket-hats" },
-              { name: "Baseball Caps", link: "/accessories/hats-beanies/baseball-caps" },
-              { name: "Beanies", link: "/accessories/hats-beanies/beanies" },
-              { name: "Visors", link: "/accessories/hats-beanies/visors" },
-              { name: "Straw Hats", link: "/accessories/hats-beanies/straw-hats" }
+              { name: "Canvas Prints", link: "/home-decor/wall-art/canvas-prints" },
+              { name: "Framed Art", link: "/home-decor/wall-art/framed-art" },
+              { name: "Metal Prints", link: "/home-decor/wall-art/metal-prints" },
+              { name: "Wood Art", link: "/home-decor/wall-art/wood-art" },
+              { name: "Photo Prints", link: "/home-decor/wall-art/photo-prints" }
             ]}
           />
           
-          {/* Bags */}
+          {/* Textiles */}
           <CategoryCard 
-            title="Bags" 
-            description="Beach bags, totes, and more for carrying essentials" 
-            imageUrl="https://images.unsplash.com/photo-1590874103328-eac38a683ce7" 
-            link="/accessories/bags"
+            title="Textiles" 
+            description="Cozy throws, pillows, and bedding with tropical patterns" 
+            imageUrl="https://images.unsplash.com/photo-1540518614846-7eded433c457" 
+            link="/home-decor/textiles"
             subcategories={[
-              { name: "Beach Bags", link: "/accessories/bags/beach-bags" },
-              { name: "Totes", link: "/accessories/bags/totes" },
-              { name: "Backpacks", link: "/accessories/bags/backpacks" },
-              { name: "Pouches", link: "/accessories/bags/pouches" },
-              { name: "Wallets", link: "/accessories/bags/wallets" }
+              { name: "Throw Pillows", link: "/home-decor/textiles/throw-pillows" },
+              { name: "Blankets", link: "/home-decor/textiles/blankets" },
+              { name: "Bedding Sets", link: "/home-decor/textiles/bedding" },
+              { name: "Table Linens", link: "/home-decor/textiles/table-linens" },
+              { name: "Beach Towels", link: "/home-decor/textiles/beach-towels" }
             ]}
           />
           
-          {/* Golf Accessories */}
+          {/* Accents */}
           <CategoryCard 
-            title="Golf Accessories" 
-            description="Premium golf towels and accessories with Hawaiian designs" 
-            imageUrl="https://images.unsplash.com/photo-1535131749006-b7f58c99034b" 
-            link="/accessories/golf"
+            title="Accents" 
+            description="Decorative pieces to add Hawaiian charm to any room" 
+            imageUrl="https://images.unsplash.com/photo-1616046229478-9901c5536a45" 
+            link="/home-decor/accents"
             subcategories={[
-              { name: "Golf Towels", link: "/accessories/golf/towels" },
-              { name: "Club Covers", link: "/accessories/golf/club-covers" },
-              { name: "Golf Bags", link: "/accessories/golf/bags" },
-              { name: "Accessories", link: "/accessories/golf/accessories" }
+              { name: "Vases", link: "/home-decor/accents/vases" },
+              { name: "Candles", link: "/home-decor/accents/candles" },
+              { name: "Figurines", link: "/home-decor/accents/figurines" },
+              { name: "Wall Decor", link: "/home-decor/accents/wall-decor" },
+              { name: "Decorative Bowls", link: "/home-decor/accents/bowls" }
             ]}
           />
         </div>
@@ -98,7 +99,7 @@ export default function AccessoriesPage() {
             <h2 className={`text-4xl md:text-5xl font-normal text-volcanic mb-2 ${msMadi.className}`}>
               Featured Products
             </h2>
-            <p className="text-volcanic/70 mb-4">Our best-selling accessories</p>
+            <p className="text-volcanic/70 mb-4">Transform your space with our bestsellers</p>
             <Link href="/shop" className="text-ocean hover:text-ocean/80 font-medium flex items-center">
               View All 
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 ml-1">
@@ -109,30 +110,30 @@ export default function AccessoriesPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             <ProductCard 
-              title="Hibiscus Paradise Hat"
-              price="$24.99"
-              imageUrl="https://images.unsplash.com/photo-1521369909029-2afed882baee"
-              link="/accessories/hats-beanies/hibiscus-paradise-hat"
+              title="Sunset Palm Canvas"
+              price="$89.99"
+              imageUrl="https://images.unsplash.com/photo-1513519245088-0e12902e5a38"
+              link="/home-decor/wall-art/sunset-palm-canvas"
               badge="Bestseller"
             />
             <ProductCard 
-              title="Hawaiian Print Tote"
+              title="Tropical Throw Pillow"
               price="$34.99"
-              imageUrl="https://images.unsplash.com/photo-1590874103328-eac38a683ce7"
-              link="/accessories/bags/hawaiian-print-tote"
+              imageUrl="https://images.unsplash.com/photo-1540518614846-7eded433c457"
+              link="/home-decor/textiles/tropical-throw-pillow"
               badge="New"
             />
             <ProductCard 
-              title="Palm Tree Golf Towel"
-              price="$18.99"
-              imageUrl="https://images.unsplash.com/photo-1535131749006-b7f58c99034b"
-              link="/accessories/golf/palm-tree-towel"
+              title="Hibiscus Vase"
+              price="$49.99"
+              imageUrl="https://images.unsplash.com/photo-1616046229478-9901c5536a45"
+              link="/home-decor/accents/hibiscus-vase"
             />
             <ProductCard 
-              title="Surf Beanie"
-              price="$19.99"
-              imageUrl="https://images.unsplash.com/photo-1576871337622-98d48d1cf531"
-              link="/accessories/hats-beanies/surf-beanie"
+              title="Wave Print Set"
+              price="$129.99"
+              imageUrl="https://images.unsplash.com/photo-1498575637358-821023f27355"
+              link="/home-decor/wall-art/wave-print-set"
             />
           </div>
         </section>
@@ -143,29 +144,29 @@ export default function AccessoriesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className={`text-4xl md:text-5xl font-normal text-volcanic mb-6 ${msMadi.className}`}>
-              Style Guide: Accessorize with Aloha
+              Style Guide: Hawaiian Home Design
             </h2>
             <p className="text-lg text-volcanic/80 mb-8">
-              Our accessories are designed to be versatile and complement our apparel collections. Here's how to style them for maximum impact, whether you're hitting the beach or just want to bring some Hawaiian vibes to your everyday look.
+              Create a tropical paradise in your home with our curated collection of Hawaiian-inspired decor. Learn how to blend traditional island elements with modern design for a space that feels both exotic and welcoming.
             </p>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-ocean mt-0.5 mr-3">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-volcanic/80">Pair our bucket hats with casual tees for a classic beach look</span>
+                <span className="text-volcanic/80">Mix and match tropical prints with solid colors for balanced visual interest</span>
               </li>
               <li className="flex items-start">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-ocean mt-0.5 mr-3">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-volcanic/80">Use our tote bags for beach days, shopping, or as a stylish everyday carry-all</span>
+                <span className="text-volcanic/80">Layer textures with our throws and pillows for a cozy, island-inspired atmosphere</span>
               </li>
               <li className="flex items-start">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-ocean mt-0.5 mr-3">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-volcanic/80">Our golf accessories bring Hawaiian style to the course while maintaining professional functionality</span>
+                <span className="text-volcanic/80">Create focal points with our statement wall art pieces in living spaces</span>
               </li>
             </ul>
             <div className="mt-8">
@@ -178,8 +179,8 @@ export default function AccessoriesPage() {
             <div className="space-y-4">
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <Image 
-                  src="https://images.unsplash.com/photo-1583744946564-b52ac1c389c8" 
-                  alt="Styling accessories" 
+                  src="https://images.unsplash.com/photo-1617104424032-b9bd6972d0e4" 
+                  alt="Home styling inspiration" 
                   width={300} 
                   height={400} 
                   className="w-full h-auto object-cover"
@@ -187,8 +188,8 @@ export default function AccessoriesPage() {
               </div>
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <Image 
-                  src="https://images.unsplash.com/photo-1576871337622-98d48d1cf531" 
-                  alt="Styling accessories" 
+                  src="https://images.unsplash.com/photo-1616627547584-bf28cee262db" 
+                  alt="Home styling inspiration" 
                   width={300} 
                   height={300} 
                   className="w-full h-auto object-cover"
@@ -197,8 +198,8 @@ export default function AccessoriesPage() {
             </div>
             <div className="rounded-xl overflow-hidden shadow-lg h-full">
               <Image 
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978" 
-                alt="Styling accessories" 
+                src="https://images.unsplash.com/photo-1616486701797-0f33f61038ec" 
+                alt="Home styling inspiration" 
                 width={300} 
                 height={700} 
                 className="w-full h-full object-cover"
