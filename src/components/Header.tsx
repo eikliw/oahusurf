@@ -65,16 +65,22 @@ export default function Header() {
               Home
             </Link>
             <Link
+              href="/about"
+              className={`${textColor} hover:text-ocean transition-colors duration-300`}
+            >
+              About
+            </Link>
+            <Link
               href="/shop"
               className={`${textColor} hover:text-ocean transition-colors duration-300`}
             >
               Shop
             </Link>
             <Link
-              href="/about"
+              href="/blog"
               className={`${textColor} hover:text-ocean transition-colors duration-300`}
             >
-              About
+              Blog
             </Link>
             <Link
               href="/contact"
@@ -128,6 +134,13 @@ export default function Header() {
                   Home
                 </Link>
                 <Link
+                  href="/about"
+                  className="text-volcanic hover:text-ocean transition-colors duration-200 py-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link
                   href="/shop"
                   className="text-volcanic hover:text-ocean transition-colors duration-200 py-2"
                   onClick={() => setMobileMenuOpen(false)}
@@ -135,11 +148,11 @@ export default function Header() {
                   Shop
                 </Link>
                 <Link
-                  href="/about"
+                  href="/blog"
                   className="text-volcanic hover:text-ocean transition-colors duration-200 py-2"
                   onClick={() => setMobileMenuOpen(false)}
                 >
-                  About
+                  Blog
                 </Link>
                 <Link
                   href="/contact"

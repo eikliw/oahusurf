@@ -29,19 +29,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Breadcrumbs */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 bg-white">
-        <nav className="flex text-sm">
-          <ol className="flex items-center space-x-2">
-            <li>
-              <Link href="/" className="text-volcanic/60 hover:text-volcanic">Home</Link>
-            </li>
-            <li className="text-volcanic/60">/</li>
-            <li className="text-volcanic">About</li>
-          </ol>
-        </nav>
-      </div>
-
       {/* Mission Section */}
       <section className="bg-sage/5 py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
