@@ -2,13 +2,13 @@
 
 import { NextStudio } from 'next-sanity/studio';
 import { useState, useEffect } from 'react';
-import { SanityConfigLike } from 'sanity';
+import { defineConfig } from 'sanity';
 
 // We can't import the config directly as it's outside the src directory
 // Instead, we'll dynamically import it at runtime
 export default function AdminPage() {
   // Using dynamic import to load the config at runtime
-  const [config, setConfig] = useState<SanityConfigLike | null>(null);
+  const [config, setConfig] = useState<ReturnType<typeof defineConfig> | null>(null);
 
   useEffect(() => {
     import('../../../../studio/sanity.config').then((module) => {
