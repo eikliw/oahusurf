@@ -5,8 +5,13 @@ import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
 
+// Import the schema types
+import authorSchema from '../../../schemas/author';
+import categorySchema from '../../../schemas/category';
+import postSchema from '../../../schemas/post';
+
 export default function StudioClient() {
-  // Create a simple config directly in the component
+  // Create a properly configured Sanity Studio
   const config = defineConfig({
     name: 'default',
     title: 'Oahu Surf Co Blog',
@@ -14,13 +19,19 @@ export default function StudioClient() {
     projectId: '8hae5kj0',
     dataset: 'production',
     
+    basePath: '/studio',
+    
     plugins: [
       deskTool(),
       visionTool(),
     ],
     
     schema: {
-      types: [],
+      types: [
+        postSchema,
+        authorSchema,
+        categorySchema
+      ],
     },
   });
 
