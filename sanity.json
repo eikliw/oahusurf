@@ -1,0 +1,15 @@
+{
+  "root": true,
+  "project": {
+    "name": "Oahu Surf Co Blog"
+  },
+  "api": {
+    "projectId": "8hae5kj0",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/desk-tool",
+    "@sanity/vision"
+  ]
+} 

@@ -4,6 +4,16 @@ export default defineType({
   name: 'post',
   title: 'Post',
   type: 'document',
+  fieldsets: [
+    {
+      name: 'seoSection',
+      title: 'SEO & Social Sharing',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      }
+    }
+  ],
   fields: [
     defineField({
       name: 'title',
@@ -84,6 +94,23 @@ export default defineType({
       ],
       validation: (Rule) => Rule.required(),
     }),
+    // SEO Fields
+    defineField({
+      name: 'seo',
+      title: 'SEO & Metadata',
+      type: 'seo',
+      fieldset: 'seoSection',
+      description: 'Additional settings for search engines and social sharing',
+      // Default values
+      initialValue: {
+        metaTitle: '',
+        metaDescription: '',
+        indexing: {
+          noindex: false,
+          nofollow: false
+        }
+      }
+    })
   ],
 
   preview: {

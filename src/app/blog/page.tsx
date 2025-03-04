@@ -81,13 +81,15 @@ export default function BlogPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [categories, setCategories] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchPosts() {
       setIsLoading(true);
+      setError(null);
       try {
-        // Query to get all blog posts
-        const query = `*[_type == "post"] {
+        // Improved query to get all blog posts with better error handling
+        const query = `*[_type == "post" && defined(slug.current)] {
           _id,
           title,
           slug,
@@ -99,6 +101,12 @@ export default function BlogPage() {
         } | order(publishedAt desc)`;
         
         const fetchedPosts = await client.fetch(query);
+        console.log(`Fetched ${fetchedPosts.length} blog posts`);
+        
+        if (fetchedPosts.length === 0) {
+          console.warn('No posts found. Make sure your Sanity query is correct and posts exist.');
+        }
+        
         setPosts(fetchedPosts);
         
         // Extract unique categories
@@ -109,6 +117,7 @@ export default function BlogPage() {
         setCategories(uniqueCategories);
       } catch (error) {
         console.error("Error fetching blog posts:", error);
+        setError("Failed to load blog posts. Please try again later.");
       } finally {
         setIsLoading(false);
       }
