@@ -54,8 +54,12 @@ export async function generateMetadata(
       { slug: params.slug }
     );
 
+    // Determine the site URL - using environment variable in production or localhost in development
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://oahusurfco.com';
+
     // Fallback to defaults if no SEO data exists
     const metadata: Metadata = {
+      metadataBase: new URL(siteUrl),
       title: post?.seo?.metaTitle || post.title || 'Blog Post',
       description: post?.seo?.metaDescription || post.excerpt || '',
       robots: {
@@ -93,6 +97,7 @@ export async function generateMetadata(
     console.error('Error generating metadata:', error);
     // Return basic metadata if there's an error
     return {
+      metadataBase: new URL('https://oahusurfco.com'),
       title: 'Blog Post',
       description: 'Read our latest blog post',
     };
