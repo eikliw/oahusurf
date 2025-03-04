@@ -1,5 +1,3 @@
-'use client'
-
 /**
  * This route is responsible for the built-in authoring environment using Sanity Studio.
  * All routes under your studio path is handled by this file using Next.js' catch-all routes:
@@ -9,14 +7,14 @@
  * https://github.com/sanity-io/next-sanity
  */
 
-import { NextStudio } from 'next-sanity/studio'
-import config from '../../../../sanity.config'
+import StudioClient from '@/components/studio/StudioClient';
 
-export const dynamic = 'force-static'
-
-// These exports are not compatible with 'use client' directive, so they need to be removed
-// export { metadata, viewport } from 'next-sanity/studio'
+// Generate static params for the studio route
+export function generateStaticParams() {
+  // For the studio route, we only need to generate the root path
+  return [{ tool: [] }];
+}
 
 export default function StudioPage() {
-  return <NextStudio config={config} />
+  return <StudioClient />;
 }
